@@ -10,19 +10,25 @@ namespace WageCaseProblem
     {
         public static void TotalWage()
         {
-            int Is_Present = 1;
+            int Is_Present_Full_Time = 1;
+            int Is_Present_Part_Time = 2;
             int Wage_Per_Hrs = 20;
             int EmpHrs = 0;
 
             int Total_Wage = 0;
 
             Random random = new Random();
-            int num = random.Next(2);
+            int num = random.Next(3);
 
-            if (num == Is_Present)
+            if (num == Is_Present_Full_Time)
             {
-                Console.WriteLine("Employee is present");
+                Console.WriteLine("Employee is present for full time");
                 EmpHrs = 8;
+            }
+            else if(num == Is_Present_Part_Time)
+            {
+                Console.WriteLine("Employee is present for part time");
+                EmpHrs = 4;
             }
 
             else
