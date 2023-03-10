@@ -8,37 +8,39 @@ namespace WageCaseProblem
 {
     public class EmployeeWage
     {
-        public static void TotalWage()
+        public static void SwitchCase()
         {
-            int Is_Present_Full_Time = 1;
-            int Is_Present_Part_Time = 2;
-            int Wage_Per_Hrs = 20;
             int EmpHrs = 0;
-
-            int Total_Wage = 0;
-
+            int total_Work_Hour = 0;
+            int Wage_Per_Hour = 20;
             Random random = new Random();
             int num = random.Next(3);
 
-            if (num == Is_Present_Full_Time)
-            {
-                Console.WriteLine("Employee is present for full time");
-                EmpHrs = 8;
-            }
-            else if(num == Is_Present_Part_Time)
-            {
-                Console.WriteLine("Employee is present for part time");
-                EmpHrs = 4;
-            }
+            int total_Salary = 0;
 
-            else
+            switch (num)
             {
-                Console.WriteLine("Employee is Absent");
-                EmpHrs = 0;
-            }
+                case 0:
+                    Console.WriteLine("Employee is Absent");
+                    EmpHrs = 0;
+                    break;
 
-            Total_Wage = (EmpHrs * Wage_Per_Hrs);
-            Console.WriteLine(Total_Wage);
+                case 1:
+                    Console.WriteLine("Employee is present for part time");
+                    EmpHrs = 4;
+                    break;
+
+                case 2:
+                    Console.WriteLine("Employee is present for full time");
+                    EmpHrs = 8;
+                    break;
+            }
+            total_Work_Hour = (total_Work_Hour + EmpHrs);
+
+            total_Salary = (total_Work_Hour * Wage_Per_Hour);
+            Console.WriteLine(total_Salary);
+
         }
+        
     }
 }
